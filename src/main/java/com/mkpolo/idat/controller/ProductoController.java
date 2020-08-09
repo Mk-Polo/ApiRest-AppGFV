@@ -45,13 +45,14 @@ public class ProductoController {
 		return categoriaService.listarCategoria();
 	}
 	
-	@GetMapping(value="/listaC")
+	@GetMapping(value="/listaM")
 	public List<Marca> getMarca(){
 		return marcaService.listarMarca();
 	}
 	
 	@PostMapping(value="/save")
 	public ResponseEntity<Producto> save(@RequestBody Producto producto){
+		System.out.println("Mostrado la marca" + producto.getMarca().getIdMarca());
 		productoService.guardar(producto);
 		return new ResponseEntity<Producto>(producto, HttpStatus.OK);
 	}

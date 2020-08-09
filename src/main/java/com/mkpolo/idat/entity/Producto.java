@@ -43,6 +43,9 @@ public class Producto implements Serializable{
 	
 	@Column
 	private int dias;
+	
+	@Column
+	private String imagen;
 
 	public Producto() {
 		super();
@@ -50,7 +53,7 @@ public class Producto implements Serializable{
 	}
 
 	public Producto(Long idProducto, Categoria categoria, Marca marca, String producto, String peso, String acciones,
-			int dias) {
+			int dias, String imagen) {
 		super();
 		this.idProducto = idProducto;
 		this.categoria = categoria;
@@ -59,7 +62,10 @@ public class Producto implements Serializable{
 		this.peso = peso;
 		this.acciones = acciones;
 		this.dias = dias;
+		this.imagen = imagen;
 	}
+
+
 
 	public Long getIdProducto() {
 		return idProducto;
@@ -121,11 +127,19 @@ public class Producto implements Serializable{
 		return serialVersionUID;
 	}
 
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
 	@Override
 	public String toString() {
 		return "Producto [idProducto=" + idProducto + ", categoria=" + categoria + ", marca=" + marca + ", producto="
-				+ producto + ", peso=" + peso + ", acciones=" + acciones + ", dias=" + dias + "]";
+				+ producto + ", peso=" + peso + ", acciones=" + acciones + ", dias=" + dias + ", imagen=" + imagen
+				+ "]";
 	}
-	
 
 }
