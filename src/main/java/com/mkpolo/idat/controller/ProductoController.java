@@ -52,7 +52,6 @@ public class ProductoController {
 	
 	@PostMapping(value="/save")
 	public ResponseEntity<Producto> save(@RequestBody Producto producto){
-		System.out.println("Mostrado la marca" + producto.getMarca().getIdMarca());
 		productoService.guardar(producto);
 		return new ResponseEntity<Producto>(producto, HttpStatus.OK);
 	}

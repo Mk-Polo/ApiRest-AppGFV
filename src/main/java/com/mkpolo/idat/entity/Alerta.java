@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,18 +25,33 @@ public class Alerta  implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@ManyToOne
+	@JoinColumn(name="producto_id")
+	private Producto producto;
+	
 	private String estado;
+	
+	private Date vencimiento;
 
 	public Alerta() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Alerta(Long id, String estado, Date vencimiento) {
+	public Alerta(Long id, Producto producto, String estado, Date vencimiento) {
 		super();
 		this.id = id;
+		this.producto = producto;
 		this.estado = estado;
 		this.vencimiento = vencimiento;
+	}
+
+	public Producto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
 	}
 
 	public Long getId() {
