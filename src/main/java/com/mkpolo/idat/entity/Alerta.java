@@ -31,14 +31,14 @@ public class Alerta  implements Serializable{
 	
 	private String estado;
 	
-	private Date vencimiento;
+	private String vencimiento;
 
 	public Alerta() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Alerta(Long id, Producto producto, String estado, Date vencimiento) {
+	public Alerta(Long id, Producto producto, String estado, String vencimiento) {
 		super();
 		this.id = id;
 		this.producto = producto;
@@ -70,11 +70,11 @@ public class Alerta  implements Serializable{
 		this.estado = estado;
 	}
 
-	public Date getVencimiento() {
+	public String getVencimiento() {
 		return vencimiento;
 	}
 
-	public void setVencimiento(Date vencimiento) {
+	public void setVencimiento(String vencimiento) {
 		this.vencimiento = vencimiento;
 	}
 

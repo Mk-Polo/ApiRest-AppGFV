@@ -68,4 +68,26 @@ public class ProductoController {
 		
 		return new ResponseEntity<Producto>(producto, HttpStatus.OK);
 	}
+	
+	/*@GetMapping(value="/buscar/{barra}")
+	public ResponseEntity<Producto> buscarBarra(@PathVariable Long barra) {
+		Producto product = productoService.buscarPorBarra(barra);
+		if(product == null) {
+			System.out.println("No hay un producto");
+			return new ResponseEntity<Producto>(HttpStatus.NO_CONTENT);
+		}
+		System.out.println("Si hay un producto");
+		return new ResponseEntity<Producto>(product, HttpStatus.OK);
+	}*/
+	
+	@GetMapping(value="/buscar/{barra}")
+	public Producto buscarBarra(@PathVariable Long barra) {
+		Producto product = productoService.buscarPorBarra(barra);
+		if(product == null) {
+			System.out.println("No hay un producto");
+			return new Producto();
+		}
+		System.out.println("Si hay un producto");
+		return product;
+	}
 }

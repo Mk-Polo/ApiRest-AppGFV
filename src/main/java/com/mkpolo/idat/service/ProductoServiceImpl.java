@@ -35,4 +35,9 @@ public class ProductoServiceImpl implements IProductoService{
 		productoRepository.deleteById(id);
 	}
 
+	@Override
+	public Producto buscarPorBarra(Long barra) {
+		return productoRepository.findByBarra(barra);
+	}
+
 }

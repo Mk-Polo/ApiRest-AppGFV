@@ -35,4 +35,10 @@ public class AlertaServiceImpl implements IAlertaService{
 		alertaRepository.deleteById(id);
 	}
 
+	@Override
+	public List<Alerta> listarPorEstado(String estado) {
+		// TODO Auto-generated method stub
+		return (List<Alerta>) alertaRepository.findByEstado(estado);
+	}
+
 }

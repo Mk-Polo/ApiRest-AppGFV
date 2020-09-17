@@ -36,6 +36,9 @@ public class Producto implements Serializable{
 	private String producto;
 	
 	@Column
+	private Long barra;
+	
+	@Column
 	private String peso;
 	
 	@Column
@@ -52,20 +55,27 @@ public class Producto implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Producto(Long idProducto, Categoria categoria, Marca marca, String producto, String peso, String acciones,
-			int dias, String imagen) {
+	public Producto(Long idProducto, Categoria categoria, Marca marca, String producto, Long barra, String peso,
+			String acciones, int dias, String imagen) {
 		super();
 		this.idProducto = idProducto;
 		this.categoria = categoria;
 		this.marca = marca;
 		this.producto = producto;
+		this.barra = barra;
 		this.peso = peso;
 		this.acciones = acciones;
 		this.dias = dias;
 		this.imagen = imagen;
 	}
 
+	public Long getBarra() {
+		return barra;
+	}
 
+	public void setBarra(Long barra) {
+		this.barra = barra;
+	}
 
 	public Long getIdProducto() {
 		return idProducto;

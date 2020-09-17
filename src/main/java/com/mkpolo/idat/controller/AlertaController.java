@@ -30,6 +30,11 @@ public class AlertaController {
 		return alertaService.listarAlerta();
 	}
 	
+	@GetMapping(value="/all/{estado}")
+	public List<Alerta> getAllEstado(@PathVariable String estado){
+		return alertaService.listarPorEstado(estado);
+	}
+	
 	@PostMapping(value="/save")
 	public ResponseEntity<Alerta> guardar(@RequestBody Alerta alerta){
 		alertaService.guardar(alerta);

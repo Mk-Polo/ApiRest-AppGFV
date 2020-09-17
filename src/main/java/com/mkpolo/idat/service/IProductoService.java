@@ -14,5 +14,7 @@ public interface IProductoService{
 	public Producto buscarPorId(Long id);
 	
 	public void eliminar(Long id);
+	
+	public Producto buscarPorBarra(Long barra);
 
 }

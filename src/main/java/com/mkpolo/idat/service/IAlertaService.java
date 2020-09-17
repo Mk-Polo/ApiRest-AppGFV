@@ -7,6 +7,8 @@ public interface IAlertaService {
 
 	public List<Alerta> listarAlerta();
 	
+	public List<Alerta> listarPorEstado(String estado);
+	
 	public void guardar (Alerta alerta);
 	
 	public Alerta buscarPorId(Long id);
